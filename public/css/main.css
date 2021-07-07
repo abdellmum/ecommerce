@@ -30,3 +30,9 @@
 .quantité {
     text-decoration: none;
 }
+.cart__count {
+    background-color: #0dcaf0;
+    padding: 2px;
+    border-radius: 50%;
+    color: white;
+}
