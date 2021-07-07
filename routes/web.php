@@ -19,6 +19,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/boutique','ProductController@index')->name('products.index');
+Route::get('/panier','CartController@index')->name('cart.index');
 Route::get('/boutique/{slug}','ProductController@show')->name('products.show');
 Route::post('/panier/ajouter','CartController@store')->name('cart.store');
 Route::get('/viderpanier',function(){
