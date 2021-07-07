@@ -5,11 +5,20 @@
     -moz-user-select: none;
     user-select: none;
 }
+.addtocart {
+    border: 0px ridge #1c6ea4;
+    border-radius: 0px 40px 40px 0px;
+}
+.cart__icon {
+    width: 2rem;
+    height: 3rem;
+    border-radius: 1.5rem;
+    background-color: white;
+}
 .header__hero {
-    background-image: url(../img/hero1.jpg);
+    background-image: url(../img/banner-home.jpeg);
     background-position: center;
     background-size: cover;
-    background-attachment: fixed;
     background-repeat: no-repeat;
 }
 
@@ -17,4 +26,7 @@
     .bd-placeholder-img-lg {
         font-size: 3.5rem;
     }
+}
+.quantité {
+    text-decoration: none;
 }
