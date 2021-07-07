@@ -16,7 +16,7 @@ class CartController extends Controller
      */
     public function index()
     {
-        //
+    return view('cart.index');
     }
 
     /**
@@ -51,7 +51,7 @@ class CartController extends Controller
 
       Cart::add($product->id,$product->tittle,1,$product->price)
      -> associate('App\Products');
-    return redirect()->route('products.index')->with('success','le produit est bien ajouté au panier.');
+    return redirect()->route('products.index')->with('success','le choix produit est bien ajouté au panier.');
     }
 
     /**
