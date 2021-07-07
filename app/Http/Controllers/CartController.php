@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use Gloudemans\shoppingcart\facades\cart;
-
+use App\Products;
 use Illuminate\Http\Request;
+use Gloudemans\Shoppingcart\Facades\Cart;
+
 
 
 class CartController extends Controller
@@ -35,10 +36,22 @@ class CartController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
+
     {
-      Cart::add($request->id,$request->tittle,1,$request->price)
+
+        $duplicata= Cart::search(function ($cartItem, $rowId)use($request) {
+            return $cartItem->id === $request->product_id;
+        });
+        if($duplicata->isNotEmpty()){
+            return redirect()->route('products.index')->with('success','le produit est déja bien ajouté au panier.');
+        }
+        $product=Products::find($request->product_id);
+
+
+
+      Cart::add($product->id,$product->tittle,1,$product->price)
      -> associate('App\Products');
-    return redirect()->route('products.index')->with('success','le produit est bien ajouté au panier');
+    return redirect()->route('products.index')->with('success','le produit est bien ajouté au panier.');
     }
 
     /**

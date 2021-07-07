@@ -1,7 +1,7 @@
 <?php
 
 
-
+use Gloudemans\Shoppingcart\Facades\Cart;
 
 
 /*
@@ -21,3 +21,6 @@ Route::get('/', function () {
 Route::get('/boutique','ProductController@index')->name('products.index');
 Route::get('/boutique/{slug}','ProductController@show')->name('products.show');
 Route::post('/panier/ajouter','CartController@store')->name('cart.store');
+Route::get('/viderpanier',function(){
+    Cart::destroy();
+});
