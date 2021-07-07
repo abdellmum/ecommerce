@@ -35,77 +35,8 @@
 
   </head>
   <body>
-      <!-- Navbar -->
-<nav class="navbar navbar-expand-md navbar-light">
 
-    <a class="navbar-brand" href="#!">
-      <img src="https://mdbootstrap.com/img/logo/mdb-transaprent-noshadows.png" height="30" alt="mdb logo">
-    </a>
-
-    <!-- Collapse button -->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav1"
-      aria-controls="basicExampleNav1" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <!-- Breadcrumbs -->
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a class="waves-effect" href="#!">Home</a></li>
-      <li class="breadcrumb-item"><a class="waves-effect" href="#!">Templates</a></li>
-      <li class="breadcrumb-item active"><a class="waves-effect" href="#!">E-commerce</a></li>
-    </ol>
-    <!-- Breadcrumbs -->
-
-    <!-- Links -->
-    <div class="collapse navbar-collapse" id="basicExampleNav1">
-
-      <!-- Right -->
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a href="#!" class="nav-link navbar-link-2 waves-effect">
-            <span class="badge badge-pill red">1</span>
-            <i class="fas fa-shopping-cart pl-0"></i>
-          </a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle waves-effect" id="navbarDropdownMenuLink3" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="true">
-            <i class="united kingdom flag m-0"></i>
-          </a>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#!">Action</a>
-            <a class="dropdown-item" href="#!">Another action</a>
-            <a class="dropdown-item" href="#!">Something else here</a>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a href="#!" class="nav-link waves-effect">
-            Shop
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="#!" class="nav-link waves-effect">
-            Contact
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="#!" class="nav-link waves-effect">
-            Sign in
-          </a>
-        </li>
-        <li class="nav-item pl-2 mb-2 mb-md-0">
-          <a href="#!" type="button"
-            class="btn btn-outline-info btn-md btn-rounded btn-navbar waves-effect waves-light">Sign up</a>
-        </li>
-      </ul>
-
-    </div>
-    <!-- Links -->
-
-  </nav>
-  <!-- Navbar -->
-
-{{-- <div class="container">
+<div class="container">
 
 
   <div class="nav-scroller py-1 mb-2">
@@ -119,13 +50,12 @@
       <a class="p-2 link-secondary" href="#">Accessoires</a>
       <a class="p-2 link-secondary" href="#">Setup</a>
       <a class="p-2 link-secondary" href="#">Contact</a>
-      <a class="p-2 link-secondary" href="#">login</a>
       <a class="link-secondary quantité" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
         <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
       </svg> <span class="badge badge-pill badge-dark "></span> {{ Cart::count()}}</a>
 
     </nav>
-  </div> --}}
+  </div>
   @if(session('success'))
       <div class="alert alert-success">
           {{ session('success') }}
