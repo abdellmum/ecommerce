@@ -2,16 +2,6 @@
 @section('content')
 @if (Cart::count() > 0)
 <div class="px-4 px-lg-0">
-    <!-- For demo purpose -->
-    <div class="container text-white py-5 text-center">
-      <h1 class="display-4">Bootstrap 4 shopping cart</h1>
-      <p class="lead mb-0">Build a fully structred shopping cart page using Bootstrap 4. </p>
-      <p class="lead">Snippet by <a href="https://bootstrapious.com/snippets" class="text-white font-italic">
-              <u>Bootstrapious</u></a>
-      </p>
-    </div>
-    <!-- End -->
-
     <div class="pb-5">
       <div class="container">
         <div class="row">
@@ -23,16 +13,18 @@
                 <thead>
                   <tr>
                     <th scope="col" class="border-0 bg-light">
-                      <div class="p-2 px-3 text-uppercase">Product</div>
+                      <div class="p-2 px-3 text-uppercase">Produit</div>
                     </th>
                     <th scope="col" class="border-0 bg-light">
-                      <div class="py-2 text-uppercase">Price</div>
+                      <div class="py-2 text-uppercase">Prix
+
+                      </div>
                     </th>
                     <th scope="col" class="border-0 bg-light">
-                      <div class="py-2 text-uppercase">Quantity</div>
+                      <div class="py-2 text-uppercase">Quantité</div>
                     </th>
                     <th scope="col" class="border-0 bg-light">
-                      <div class="py-2 text-uppercase">Remove</div>
+                      <div class="py-2 text-uppercase">suprimmer</div>
                     </th>
                   </tr>
                 </thead>
@@ -50,9 +42,8 @@
                         <td class="border-0 align-middle"><strong>{{ $product->model->getprice() }}</strong></td>
                         <td class="border-0 align-middle"><strong>1</strong></td>
                         <td class="border-0 align-middle">
-                            <form action="{{ route('Cart.destroy'),$product->rowId }}" method="post">
-                                @csrf
-                                @method('DELETE');
+                            <form action="" method="">
+
 
 
                             <button type="submit" class="text-dark bg-warning"><svg class
@@ -80,32 +71,32 @@
           <div class="col-lg-6">
             <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Coupon code</div>
             <div class="p-4">
-              <p class="font-italic mb-4">If you have a coupon code, please enter it in the box below</p>
+              <p class="font-italic mb-4">si vous avez un coupon entrer son code ici</p>
               <div class="input-group mb-4 border rounded-pill p-2">
                 <input type="text" placeholder="Apply coupon" aria-describedby="button-addon3" class="form-control border-0">
                 <div class="input-group-append border-0">
-                  <button id="button-addon3" type="button" class="btn btn-dark px-4 rounded-pill"><i class="fa fa-gift mr-2"></i>Apply coupon</button>
+                  <button id="button-addon3" type="button" class="btn btn-dark px-4 rounded-pill"><i class="fa fa-gift mr-2"></i>confirmer coupon</button>
                 </div>
               </div>
             </div>
-            <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Instructions for seller</div>
+            <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Instructions du vendeur</div>
             <div class="p-4">
-              <p class="font-italic mb-4">If you have some information for the seller you can leave them in the box below</p>
+              <p class="font-italic mb-4">notes sur le vendeur</p>
               <textarea name="" cols="30" rows="2" class="form-control"></textarea>
             </div>
           </div>
           <div class="col-lg-6">
-            <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Order summary </div>
+            <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">details de la commande</div>
             <div class="p-4">
               <p class="font-italic mb-4">Shipping and additional costs are calculated based on values you have entered.</p>
               <ul class="list-unstyled mb-4">
-                <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Order Subtotal </strong><strong>$390.00</strong></li>
-                <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Shipping and handling</strong><strong>$10.00</strong></li>
-                <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Tax</strong><strong>$0.00</strong></li>
+                <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">sou-total </strong><strong>{{ getPrice(Cart::subtotal())}}</strong></li>
+                {{-- <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Shipping and handling</strong><strong>$10.00</strong></li> --}}
+                <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Taxe</strong><strong>{{ getPrice(Cart::tax()) }}</strong></li>
                 <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Total</strong>
-                  <h5 class="font-weight-bold">$400.00</h5>
+                  <h5 class="font-weight-bold">{{ getPrice(Cart::total())}}</h5>
                 </li>
-              </ul><a href="#" class="btn btn-dark rounded-pill py-2 btn-block">Procceed to checkout</a>
+              </ul><a href="{{route('checkout.index')}}" class="btn btn-dark rounded-pill py-2 btn-block">payer</a>
             </div>
           </div>
         </div>
