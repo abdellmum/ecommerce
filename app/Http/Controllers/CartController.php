@@ -40,7 +40,7 @@ class CartController extends Controller
     {
 
         $duplicata= Cart::search(function ($cartItem, $rowId)use($request) {
-            return $cartItem->id === $request->product_id;
+            return $cartItem->id == $request->product_id;
         });
         if($duplicata->isNotEmpty()){
             return redirect()->route('products.index')->with('success','le produit est déja bien ajouté au panier.');
