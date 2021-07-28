@@ -1,0 +1,13 @@
+{
+    "recommendations": [
+        "onecentlin.laravel5-snippets",
+        "onecentlin.laravel-blade",
+        "amiralizadeh9480.laravel-extra-intellisense",
+        "ryannaddy.laravel-artisan",
+        "shufo.vscode-blade-formatter",
+        "onecentlin.laravel-extension-pack",
+        "austenc.laravel-blade-spacer",
+        "mohsen1.prettify-json",
+        "svipas.prettier-plus"
+    ]
+}

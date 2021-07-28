@@ -17,6 +17,11 @@ class CheckoutController extends Controller
      */
     public function index()
     {
+        if(cart::count() <1){
+            return redirect()->route('products.index');
+
+
+        }
         Stripe::setApiKey('sk_test_51JCiNhLexjMV6g6h8KVcBWIHHOa02M9jcXusmmkcdyfpMFW4G73DjLbzJ1zL7xwYtzQsXhDjjTBwLOV8fpIpKUzl00S5bJcKXp');
 
         $intent = PaymentIntent::create([
